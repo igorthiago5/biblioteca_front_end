@@ -15,13 +15,13 @@ export function CadastrarLivro(){
                                     <div className="col-md-6">
                                              <div class="">
                                                 <label for="exampleInputEmail1" class="form-label">Nome</label>
-                                                <input type="email" class="form-control-person" id="exampleInputEmail1" aria-describedby="emailHelp" name="" />
-                                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                                                <input type="text" class="form-control-person" id="exampleInputEmail1" aria-describedby="emailHelp" name="" />
+                                              
                                                 
                                             </div>
                                              <div class="">
                                                 <label for="exampleInputEmail1" class="form-label">Autores</label>
-                                                <input type="email" class="form-control-person" name="autor" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                                <input type="text" class="form-control-person" name="autor" id="exampleInputEmail1" aria-describedby="emailHelp" />
                                                 <div id="emailHelp" class="form-text text-white">Caso tenha mais de um, os separe por virgula.</div>
                                             </div>
                                             

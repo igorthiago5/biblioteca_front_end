@@ -18,6 +18,27 @@
       0 0 102px #9ef01a,
       0 0 151px #9ef01a;
 }
+/*Scrol bar geral*/
+::-webkit-scrollbar-corner{
+  border-radius: 400px;
+  background-color: #1654c9;
+}
+:-webkit-scrollbar-track {
+    background-color: #1654c9;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    background: #212529;
+}
+::-webkit-scrollbar-thumb {
+    background: #b100e8;
+}
+/*input number geral*/
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 section{
     color: white;
 }
@@ -138,4 +159,59 @@ section{
 .btn-person:focus {
   outline: 0;
   box-shadow: 0 0 0 0.25rem #b100e8;
+}
+.card-forms-body-itens{
+ 
+  column-gap: 14px;
+  height: 600px ;
+  overflow-y: scroll;
+  
+}
+.card-itens-style{
+  margin-top: 0.5rem;
+  width: 100%;
+  height: 100px;
+
+  background-color: #212529;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+.card-itens-style:hover{
+  border-left: 5px solid #9ef01a;
+  cursor: pointer;
+}
+.org-livros{
+  display: flex;
+  justify-content: stretch;
+  flex-wrap: wrap;
+  flex: 200 1 1;
+  gap: 10px;
+  overflow-y: scroll;
+  height: 600px;
+  padding: 0.3rem;
+}
+/** 
+Botão personalizado 2
+**/
+.btn-person2{
+ display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid transparent;
+  border-radius: 0.375rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+ border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+   color: #fff;
+  background-color: #198754;
+  border-color: none;
 }
