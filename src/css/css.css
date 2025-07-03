@@ -4,7 +4,9 @@
     color: #212529 !important;
     border-radius: 7px;
 }
-
+html{
+  overflow-x: hidden;
+}
 .nome-brand{
     color: #9ef01a;
     margin-right: 2rem;
@@ -81,6 +83,8 @@ section{
       transform: scale(1.05) !important;
 }
 .card-forms{
+    z-index: 1;
+    margin-bottom: 1rem;
     border: 1px soldi white;
     background-color: #212529;
     
@@ -214,4 +218,26 @@ Botão personalizado 2
    color: #fff;
   background-color: #198754;
   border-color: none;
+}
+.config-title{
+  display: flex;
+  justify-content: space-between;
+}
+.form-genero{
+  
+  position: absolute;
+  
+  border: 1px solid whitesmoke;
+  transition: margin-bottom 1rem 0.4s ease;
+  background-color: #212529;
+  border-radius: 9px;
+  height: auto;
+  right: 15px;
+  width: auto;
+}
+.box-config-genero{
+  padding: 1rem;
+  height: auto;
+  border-radius: 8px;
+  
 }
