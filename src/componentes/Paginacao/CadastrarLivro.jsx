@@ -6,6 +6,7 @@ import { FormGenero } from "../componentesCadastroItens/cadastrargenero";
 
 
 export function CadastrarLivro(){
+    const [dadosGen,setDadosGen] = useState()
     const validacao = false;
     const [validar,setValidacao] = useState(validacao)
     
@@ -13,12 +14,23 @@ export function CadastrarLivro(){
         let novaValidacao = !validar ? true : false  
         setValidacao(novaValidacao)
     }
+    const receberDado = (dado) => {
+       
+        setDadosGen(dado)
+        if(dadosGen){
+            setValidacao(false)
+        }
+    }
     const verificarValidacao = ()=>{
         if(validar ){
             
-            return <FormGenero />
+            return <FormGenero aoConfirmarEnvio={receberDado} />
+           
         }
+        
+        
     }
+    
      return(
         <section className="container mt-4">
             <div className="row">
@@ -41,7 +53,7 @@ export function CadastrarLivro(){
                             <form>
                                 <div className="row">
                                     <div className="col-md-6">
-                                             <div className="">
+                                             <div >
                                                 <label for="exampleInputEmail1" class="form-label">Nome</label>
                                                 <input type="text" className="form-control-person" id="exampleInputEmail1" aria-describedby="emailHelp" name="" />
                                               
@@ -55,13 +67,13 @@ export function CadastrarLivro(){
                                             
                                     </div>  
                                     <div className="col-md-6">
-                                        <div className="">
+                                        <div >
                                                 <label for="exampleInputEmail1" class="form-label">ISBN</label>
                                                 <input type="email" className="form-control-person" id="exampleInputEmail1" aria-describedby="emailHelp" name="" />
                                                 <div id="emailHelp" className="form-text">Digite apenas números</div>
                                                 
                                             </div>
-                                             <div className="">
+                                             <div >
                                                 <label for="exampleInputEmail1" class="form-label">Gênero</label>
                                                 <select className="form-control-person">
                                                     <option>Genero</option>

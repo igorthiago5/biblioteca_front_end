@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import SERVER from '../config.js'
-export function FormGenero(){
+
+
+
+export function FormGenero({aoConfirmarEnvio}){
     
-    const [genero,setGenero] = useState()
+    aoConfirmarEnvio(false)
+    const [genero,setGenero] = useState("")
     
     const enviarGenero = event=>{
        event.preventDefault()
-       const servidor = SERVER+"/genero/add"
+       if(genero !== ""){
+        const servidor = SERVER+"/genero/add"
         let dados = {
             "idGenero":"",
             "nome":genero
@@ -17,12 +22,23 @@ export function FormGenero(){
         body:JSON.stringify(dados)
         }).then( dados => dados.json())
         .then(response =>{
-            console.log(response)
+            let retorno = response.result
+            if(retorno){
+                console.log('salvo')
+                aoConfirmarEnvio(true)
+                
+            }else{
+                let msg = response.erro
+                console.log(msg)
+            }
         }).catch(erro=>{
-            console.log(erro)
+           console.log(erro)
         })
-            
+       }else{
+            alert('SEm itemns')
+       }      
     }
+    
     return (
         
             <div className="form-genero">
