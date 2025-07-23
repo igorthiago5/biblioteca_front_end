@@ -3,7 +3,8 @@ import SERVER from '../config.js'
 
 
 
-export function FormGenero({aoConfirmarEnvio}){
+
+export function FormGenero({aoConfirmarEnvio,msgVazia}){
     
     aoConfirmarEnvio(false)
     const [genero,setGenero] = useState("")
@@ -26,16 +27,16 @@ export function FormGenero({aoConfirmarEnvio}){
             if(retorno){
                 console.log('salvo')
                 aoConfirmarEnvio(true)
-                
+                msgVazia(true)
             }else{
                 let msg = response.erro
                 console.log(msg)
             }
         }).catch(erro=>{
-           console.log(erro)
+            alert('ERro')
         })
        }else{
-            alert('SEm itemns')
+           msgVazia(false)
        }      
     }
     
@@ -46,6 +47,7 @@ export function FormGenero({aoConfirmarEnvio}){
                     <form method="POST" >
                         <div className="row">
                             <div className="col-md-6">
+                               
                                  <div className="mt-0">
                                     <label for="exampleInputEmail1" className="form-label">Nome do Gênero</label>
                                     <input type="text" className="form-control" id="exampleInputEmail1" name="genero" value={genero} 
@@ -55,7 +57,7 @@ export function FormGenero({aoConfirmarEnvio}){
                             </div>
                             <div className="col-md-6">
                                  <div className="mt-4">
-                                    <button type="submit" className="btn btn-primary" onClick={enviarGenero}>Cadastrar</button>
+                                    <button type="submit" className="btn btn-person" onClick={enviarGenero}>Cadastrar</button>
                                 </div>  
                             </div>
                         </div>
